@@ -11,20 +11,17 @@ Blogify is a simple and intuitive blogging platform that provides you with a pla
 5. User Authentication: Secure user authentication system allows users to sign up and sign in easily. </br>
 6. Responsive Design: Blogify's design is responsive, allowing users to access it seamlessly on desktop, tablet, and mobile devices. </br>
 
-
 ### Installation
 1. Clone the Repository: Clone the Blogify repository to your local machine using git clone. </br>
 <code>git clone https://github.com/Mayappa123/blogify.git</code> </br>
 2. Install Dependencies: Navigate to the project directory and install the dependencies. </br>
  <code>cd blogify</code> </br>
  <code>npm install</code> </br>
-
 3. Set Environment Variables: </br> Create a .env file in the root directory and add necessary environment variables. </br>
  <code>PORT=8040</code> </br>
  <code>MONGODB_URI=your_mongodb_connection_uri</code> </br>
  <code>SESSION_SECRET=your_session_secret</code>
 </br>
-
 4. Run the Application: Start the development server. </br>
  <code>npm start</code> </br>
 5. Access Blogify: Open your web browser and visit <a>http://localhost:8040</a> to access the Blogify application.
