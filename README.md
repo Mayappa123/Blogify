@@ -48,4 +48,12 @@ Contributions are welcome! If you'd like to contribute to Blogify, please fork t
 This project is licensed under the MIT License. Feel free to modify and distribute the code as per the license terms. </br>
 
 ### sample view
-<img src="./extra/blogify1.png">
+<img src="./extra/blogify1.png"> </br>
+<img src="./extra/blogify2.png"> </br>
+<img src="./extra/blogify3.png"> </br>
+<img src="./extra/blogify4.png"> </br>
+<img src="./extra/blogify5.png"> </br>
+
+### Thank You...
+
+
