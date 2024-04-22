@@ -1,0 +1,83 @@
+<!-- /users/login.ejs -->
+
+<% layout("/layouts/boilerplate") %>
+
+<body
+  style="
+    background: transparent;
+    backdrop-filter: blur(20px);
+    background-color: rgb(207, 255, 239);
+  "
+>
+  <br />
+  <h3 class="col-4 offset-4 text-center">LOGIN</h3>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-5">
+        <form action="/login" method="post" class="needs-validation" novalidate>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              name="username"
+              required
+            />
+          </div>
+
+          <!-- <div class="form-group mt-3">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              required
+            />
+          </div> -->
+
+          <div class="form-group mt-3">
+            <label for="password">Password</label>
+            <div class="input-group">
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                required
+              />
+              <span class="input-group-text">
+                <i id="togglePassword" class="fas fa-eye"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="mt-3">
+            <button type="submit" class="btn btn-success mt-3 col-4 offset-4">
+              Log In
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+<br /><br /><br /><br /><br />
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $("#togglePassword").click(function () {
+      var passwordField = $("#password");
+      var passwordFieldType = passwordField.attr("type");
+      if (passwordFieldType === "password") {
+        passwordField.attr("type", "text");
+        $(this).removeClass("fas fa-eye").addClass("fas fa-eye-slash");
+      } else {
+        passwordField.attr("type", "password");
+        $(this).removeClass("fas fa-eye-slash").addClass("fas fa-eye");
+      }
+    });
+  });
+</script>

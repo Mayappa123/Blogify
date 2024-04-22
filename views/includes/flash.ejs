@@ -1,0 +1,45 @@
+<!-- flash.ejs -->
+
+<% if (success && success.length) { %>
+<div
+  id="successMessage"
+  class="alert alert-success alert-dismissible fade show col-6 offset-3 mt-1"
+  role="success"
+>
+  <%= success %>
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+<% } %> <% if (error && error.length) { %>
+<div
+  id="errorMessage"
+  class="alert alert-danger alert-dismissible fade show col-6 offset-3 mt-1"
+  role="alert"
+>
+  <%= error %>
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+<% } %>
+
+<script>
+  setTimeout(function () {
+    var successMessage = document.getElementById("successMessage");
+    if (successMessage) {
+      successMessage.remove();
+    }
+
+    var errorMessage = document.getElementById("errorMessage");
+    if (errorMessage) {
+      errorMessage.remove();
+    }
+  }, 2000);
+</script>

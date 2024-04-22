@@ -1,0 +1,81 @@
+<!-- /blogs/edit.ejs -->
+
+<% layout("/layouts/boilerplate") %>
+<head>
+  <link rel="stylesheet" href="../../public/css/edit.ejs" />
+</head>
+<body>
+  <div class="row">
+    <div class="col-8 offset-2">
+      <br /><br />
+      <h3 class="text-center">Edit your Blog</h3>
+      <form
+        method="POST"
+        action="/blogs/<%= blog._id %>?_method=PUT"
+        class="form needs-validation"
+        novalidate
+      >
+        <div class="mb-1">
+          <label for="subject" class="form-label"><b>Subject</b></label>
+          <textarea name="blog[subject]" class="form-control" required>
+<%= blog.subject %></textarea
+          >
+        </div>
+        <br />
+
+        <div class="mb-1">
+          <label for="title" class="form-label"><b>Title</b></label>
+          <input
+            type="text"
+            class="form-control"
+            name="blog[title]"
+            value="<%= blog.title %>"
+            required
+          />
+        </div>
+        <br />
+        <div class="row d-flex">
+          <div class="mb-1 col-6">
+            <label for="date" class="form-label"><b>Date</b></label>
+            <input
+              type="date"
+              name="blog[date]"
+              class="form-control"
+              value="<%= new Date(Date.now()).toISOString().split('T')[0] %>"
+              required
+            />
+          </div>
+          <div class="col-6">
+            <label for="author" class="form-label">
+              <b>Author</b>
+            </label>
+            <input
+              type="text"
+              name="blog[author]"
+              class="form-control"
+              value="<%= blog.author %>"
+            />
+          </div>
+        </div>
+        <br />
+        <div class="mb-1">
+          <label class="form-label" for="content"><b>Content</b></label>
+          <br />
+          <textarea
+            class="form-control"
+            name="blog[content]"
+            id="content"
+            style="height: 100px"
+          ><%= blog.content %></textarea
+          >
+        </div>
+        <button
+          type="submit"
+          class="btn btn-success mb-3 mt-3 edit-btn editnSave"
+        >
+          --Save--
+        </button>
+      </form>
+    </div>
+  </div>
+</body>

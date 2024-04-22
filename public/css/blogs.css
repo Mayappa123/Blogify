@@ -1,0 +1,87 @@
+/* blogs.css OR Index.css */
+
+.blogPost {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center aligning the items */
+  gap: 20px; /* Adding gap between items */
+}
+
+.blog-container {
+  /* width: calc(33.33% - 20px); */
+  width: 85%;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.singleBlog {
+  text-decoration: none;
+}
+
+.blog-container:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.blog-header {
+  padding: 10px 20px;
+}
+
+.blog-title {
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: orange;
+}
+
+.blog-meta {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.blog-content {
+  padding: 10px 20px;
+}
+
+.blog-icons {
+  width: 130px;
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  margin: 0 0 5px 0;
+}
+
+.like-icon,
+.dislike-icon {
+  font-size: 15px;
+}
+
+.blogProfile {
+  width: 100%;
+  padding: 5px 20px 0 20px; /* Adjusting padding */
+  height: 40px; /* Decreasing height */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Adjusting alignment */
+}
+
+.blogProfile img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+@media (max-width: 991px) {
+  .blog-container {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 767px) {
+  .blog-container {
+    width: calc(100% - 20px);
+  }
+}

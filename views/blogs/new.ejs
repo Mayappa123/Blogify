@@ -1,0 +1,81 @@
+<!-- /blogs/new.ejs -->
+
+<% layout("/layouts/boilerplate") %>
+
+<head>
+  <title>New Blog</title>
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css"
+  />
+  <style>
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .postBtn {
+        width: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form-container mt-3">
+    <h3 class="text-center mb-4">New Blog</h3>
+    <form action="/blogs" method="post">
+      <div class="mb-3">
+        <label for="date" class="form-label">Date</label>
+        <input
+          type="date"
+          value="<%= new Date(Date.now()).toISOString().split('T')[0] %>"
+          class="form-control"
+          id="date"
+          name="blog[date]"
+          required 
+        />
+      </div>
+      <div class="mb-3">
+        <label for="subject" class="form-label">Subject</label>
+        <input
+          type="text"
+          class="form-control"
+          id="subject"
+          name="blog[subject]"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          name="blog[title]"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="authorName" class="form-label">Author</label>
+        <input
+          type="text"
+          class="form-control"
+          id="author"
+          name="blog[author]"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="content" class="form-label">Content</label>
+        <pre></pre><textarea
+          class="form-control"
+          id="content"
+          name="blog[content]"
+          rows="5"
+          required
+        ></textarea></pre>
+      </div>
+        <button type="submit" class=" mt-3 col-1  btn btn-primary postBtn mx-auto">Add Blog</button>
+    </form>
+  </div>
+</body>

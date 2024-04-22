@@ -1,0 +1,36 @@
+/* navbar.css */
+
+.navbar {
+  background-color: #343a40;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: #fff;
+}
+
+.search-form {
+  display: flex;
+}
+
+.search-input {
+  margin-right: 10px; 
+}
+
+li a {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .search-form {
+    display: block; 
+  }
+
+  .search-input {
+    margin-right: 0; 
+    margin-bottom: 10px; 
+  }
+}
