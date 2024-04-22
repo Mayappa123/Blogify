@@ -5,12 +5,12 @@ Blogify is a simple and intuitive blogging platform that provides you with a pla
 
 ### Features
 
-1. Create New Posts: You can write new blog posts to share with your readers. </br>
+1. Create your New Posts: You can write new blog posts to share with your readers. </br>
 2. Edit and Update: You can edit and update your existing blog posts as needed. </br>
 3. Categories: Organize your blog posts into categories for easier navigation by readers. </br>
 4. Comments: Readers can share their thoughts and feedback through comments, making your blog posts more engaging. </br>
 5. User Authentication: Secure user authentication system allows users to sign up and sign in easily. </br>
-6. Responsive Design: Blogify's design is responsive, allowing users to access it seamlessly on desktop, tablet, and mobile devices. </br>
+6. Responsive Design: Blogify's design is responsive, allowing users to access it seamlessly on desktop, and mobile devices. </br>
 
 ### Installation
 
