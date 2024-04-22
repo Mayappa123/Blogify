@@ -45,4 +45,7 @@ Contributions are welcome! If you'd like to contribute to Blogify, please fork t
 
 ### License
 
-This project is licensed under the MIT License. Feel free to modify and distribute the code as per the license terms.
+This project is licensed under the MIT License. Feel free to modify and distribute the code as per the license terms. </br>
+
+### sample view
+<img src="./extra/blogify1.png">
