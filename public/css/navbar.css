@@ -10,14 +10,14 @@
 }
 
 .search-input {
-  margin-bottom: 0; /* Reset margin-bottom */
+  margin-bottom: 0;
 }
 
 .search-btn {
-  margin-left: 10px; /* Add margin-left to create space between input and button */
+  margin-left: 10px;
 }
 
-@media (max-width: 991.98px) { /* Adjusted breakpoint for medium screens */
+@media (max-width: 991.98px) {
   .navbar-nav {
     flex-direction: column;
     align-items: center;
@@ -29,11 +29,9 @@
 
   .search-input,
   .search-btn {
-    margin: 5px 0; /* Adjust margin for smaller screens */
+    margin: 5px 0;
   }
 }
-
-
 
 .serachInput {
   height: 35px;
@@ -46,4 +44,3 @@
 .active-link:active {
   color: orange;
 }
-
