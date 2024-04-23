@@ -25,7 +25,7 @@
           <a class="nav-link" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/blogs">Blogs</a>
+          <a class="nav-link" href="/blogs">Explore</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/about">About</a>
@@ -37,21 +37,15 @@
           <a class="nav-link" href="/myblogs">My Blogs</a>
         </li>
       </ul>
-      <form class="d-flex align-items-center" method="get" action="/blogs/search">
-        <input
-          class="form-control me-2 search-input"
-          type="search"
-          placeholder="Search here..."
-          aria-label="Search"
-          name="subject"
-        />
-        <button
-          class="btn btn-primary search-btn"
-          type="submit"
-        >
-          Search
-        </button>
-      </form>
+      <div class="search">
+        <form class="d-flex serachInput" rosearch-btn">
+          <input class="form-control msearch-btn-inp" tysearch-btn" placeholder="Search blogs" >
+          <button class="btn btn-primary search-btn" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i> Search
+          </button>
+        </form>
+      </div>
+      
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <% if(!currUser) { %>
         <li class="nav-item">
