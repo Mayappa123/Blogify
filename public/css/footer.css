@@ -9,6 +9,7 @@
 
 .footer h5 {
   color: #343a40;
+  font-family: monospace;
 }
 
 .footer ul {
@@ -28,10 +29,12 @@
 
 .social-icons {
   padding-left: 0;
+  display: flex; /* Flex container for icons */
+  display: flex; /* Flex container for icons */
+  justify-content: center;
 }
 
 .social-icons li {
-  display: inline-block;
   margin-right: 10px;
 }
 
@@ -45,10 +48,11 @@
   color: #6c757d;
   text-decoration: none;
   font-size: 24px;
-  display: inline-block;
+  display: flex; /* Flex item */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
   width: 40px;
   height: 40px;
-  line-height: 40px;
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;

@@ -2,9 +2,6 @@
 
 .navbar {
   background-color: #343a40;
-  position: fixed;
-  top: 0;
-  width: 100vw;
 }
 
 .navbar-brand,
@@ -12,25 +9,27 @@
   color: #fff;
 }
 
-.search-form {
-  display: flex;
-}
-
 .search-input {
-  margin-right: 10px; 
+  margin-bottom: 0; /* Reset margin-bottom */
 }
 
-li a {
-  text-decoration: none;
+.search-btn {
+  margin-left: 10px; /* Add margin-left to create space between input and button */
 }
 
-@media (max-width: 768px) {
-  .search-form {
-    display: block; 
+@media (max-width: 991.98px) { /* Adjusted breakpoint for medium screens */
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .search-input {
-    margin-right: 0; 
-    margin-bottom: 10px; 
+  .navbar-nav .nav-item {
+    margin-bottom: 5px;
+  }
+
+  .search-input,
+  .search-btn {
+    margin: 5px 0; /* Adjust margin for smaller screens */
   }
 }
+
