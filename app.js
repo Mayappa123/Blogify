@@ -125,8 +125,8 @@ app.get("/about", isLoggedin, (req, res) => {
   res.render("blogs/about.ejs");
 });
 
-app.get("/user/active", (req, res) => {
-  res.render("users/activeUser.ejs", { currUser: req.user });
+app.get("/user/profile", (req, res) => {
+  res.render("users/profile.ejs", { currUser: req.user });
 });
 
 //Blogs related routes...

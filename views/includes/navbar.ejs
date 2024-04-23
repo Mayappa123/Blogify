@@ -59,7 +59,7 @@
           <a class="nav-link" href="/blogs/new">Create Blog </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link activeUser" href="/user/active">
+          <a class="nav-link activeUser" href="/user/profile">
             <i class="fa-solid fa-user"></i>
             <%= currUser.username %>
           </a>
@@ -72,5 +72,17 @@
     </div>
   </div>
 </nav>
+
+<script>
+  const currentPath = window.location.pathname;
+
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPath) {
+      link.classList.add('active-link');
+    }
+  });
+</script>
 
 

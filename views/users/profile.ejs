@@ -5,56 +5,63 @@
 <head>
   <title>Active User Profile</title>
    <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #7fabe6;
+    }
+
     .container3 {
-      position: relative;
       max-width: 400px;
       margin: 0 auto;
       padding: 20px;
-      background-color: #b6b6b6;
+      background-color: #ffffff;
       border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     .pen {
-      font-size: 30px;
-      position: absolute;
+      font-size: 20px;
+      position: relative;
       top: 10px;
       right: 10px;
-      color: rgb(0, 0, 0);
+      color: #333333;
       cursor: pointer;
     }
 
     .useractive {
       font-size: 80px;
-      background: none;
-      color: rgb(0, 0, 0);
-      margin-bottom: 8px;
+      margin: 20px 0;
+      color: #333333;
     }
 
     .bioContent {
       font-size: 20px;
-      color: rgb(0, 0, 0);
+      color: #333333;
+      margin-bottom: 10px;
+    
     }
 
     .bioContent:hover {
       cursor: pointer;
+      color: #000000;
     }
 
     .editBio {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 
 <body>
-  <div class="container3 mt-3">
-    <p class="editBio text-end">
-      <i class="fa-regular fa-pen-to-square pen"></i>
+  <div class="container3 mt-2">
+    <p class="editBio btn btn-outline-primary btn-sm">
+      Edit
     </p>
     <p class="useractive text-center">
       <i class="fa-solid fa-user"></i>
     </p>
     <h4 class="text-center bioContent"><%= currUser.username %></h4>
     <h4 class="text-center bioContent"><%= currUser.email %></h4>
-    <h4 class="text-center bioContent">Delete Account</h4>
+    <h4 class="text-center bioContent mx-auto">Delete Account</h4>
   </div>
 </body>

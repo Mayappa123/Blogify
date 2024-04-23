@@ -43,3 +43,7 @@
   width: 450px;
 }
 
+.active-link:active {
+  color: orange;
+}
+
