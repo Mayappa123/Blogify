@@ -9,6 +9,10 @@ const userSchema = new Schema({
   },
   profileImage: {
     type: String,
+    // set: (v) =>
+    //   v === ""
+    //     ? "https://unsplash.com/photos/shallow-focus-photography-of-woman-outdoor-during-day-rDEOVtE7vOs"
+    //     : v,
   },
 });
 

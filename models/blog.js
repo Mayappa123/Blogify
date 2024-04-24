@@ -3,6 +3,13 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const blogSchema = new mongoose.Schema({
+  // blogImage: {
+  //   type: String,
+  //   set: (v) =>
+  //     v === ""
+  //       ? "https://unsplash.com/photos/laptop-computer-on-glass-top-table-hpjSkU2UYSU"
+  //       : v,
+  // },
   date: {
     type: String,
     required: true,
