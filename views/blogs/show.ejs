@@ -12,7 +12,10 @@
     <div class="blogPost">
       <div class="blog-container">
         <div class="blogProfile">
-          <h3><%= blog.owner.username %>@123</h3>
+          <h3>
+            <img src="../../extra/user.jpg" alt="" /><%= blog.owner.username
+            %>@123
+          </h3>
           <h5 class="btn btn-outline-primary"><%= blog.subject %></h5>
         </div>
         <div class="blog-header">
@@ -30,7 +33,7 @@
           <a href="/blogs/<%= blog._id %>/edit" class="btn btn-primary editBtn">
             Edit
           </a>
-          <form method="POST" action="/blogs/<%= blog._id %>?_method=DELETE" >
+          <form method="POST" action="/blogs/<%= blog._id %>?_method=DELETE">
             <button class="btn btn-danger deleteBtn">Delete</button>
           </form>
         </div>

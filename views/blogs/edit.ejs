@@ -64,16 +64,18 @@
           <textarea
             class="form-control"
             name="blog[content]"
-            id="content"
+            id="content" spellcheck="true"
             style="height: 100px"
-          ><%= blog.content %></textarea
+          >
+<%= blog.content %></textarea
           >
         </div>
         <button
           type="submit"
           class="btn btn-success mb-3 mt-3 edit-btn editnSave"
+          style="text-decoration: none; width: 100px; font-size: 20px;"
         >
-          --Save--
+          Save
         </button>
       </form>
     </div>

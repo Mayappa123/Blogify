@@ -21,9 +21,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="/">Home</a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link" href="/blogs">Explore</a>
         </li>
@@ -33,16 +33,16 @@
         <li class="nav-item">
           <a class="nav-link" href="/contact">Contact</a>
         </li>
+        <% if(currUser) { %>
         <li class="nav-item">
-          <a class="nav-link" href="/myblogs">My Blogs</a>
+          <a class="nav-link" href="/blogs/<%= currUser._id %>">My Blogs<span class="badge">4</span></a>
         </li>
+          <% } %>
       </ul>
       <div class="search">
         <form class="d-flex serachInput" rosearch-btn">
           <input class="form-control msearch-btn-inp" tysearch-btn" placeholder="Search blogs" >
-          <button class="btn btn-primary search-btn" type="submit">
-            <i class="fa-solid fa-magnifying-glass"></i> Search
-          </button>
+          <button class="btn btn-primary search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
         </form>
       </div>
       
@@ -56,12 +56,11 @@
         </li>
         <% } %> <% if(currUser) { %>
         <li class="nav-item">
-          <a class="nav-link" href="/blogs/new">Create Blog </a>
+          <a class="nav-link" href="/blogs/new">New Blog </a>
         </li>
         <li class="nav-item">
           <a class="nav-link activeUser" href="/user/profile">
-            <i class="fa-solid fa-user"></i>
-            <%= currUser.username %>
+            <img src="../../public/images/user.png" alt="user" style="height: 30px; width: 30px;">
           </a>
         </li>
         <li class="nav-item">

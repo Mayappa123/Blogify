@@ -56,13 +56,13 @@ app.use((req, res, next) => {
   next();
 });
 
-main()
-  .then(() => {
-    console.log("connected");
-  })
-  .catch((err) => {
-    console.log("err to connect database");
-  });
+main();
+// .then(() => {
+//   console.log("connected");
+// })
+// .catch((err) => {
+//   console.log("err to connect database");
+// });
 
 //Users related routes...
 app.get("/login", (req, res) => {
@@ -198,6 +198,19 @@ app.delete("/blogs/:id", isLoggedin, isOwner, async (req, res) => {
     res.redirect("/blogs");
   } catch (error) {
     console.log(error);
+  }
+});
+
+//My blogs route
+app.get("/blogs/:user", isLoggedin, async (req, res) => {
+  try {
+    let id = req.params.user;
+    const userBlogs = await Blog.find({ owner: id });
+    res.render("blogs/myblogs.ejs", { userBlogs });
+  } catch (error) {
+    console.error("Error fetching user blogs:", error);
+    req.flash("error", "Failed to fetch user blogs.");
+    res.redirect("/blogs");
   }
 });
 
