@@ -1,35 +1,52 @@
 <!-- flash.ejs -->
+<link rel="stylesheet" href="../../public/css/flash.css" />
 
 <% if (success && success.length) { %>
 <div
   id="successMessage"
   class="alert alert-success alert-dismissible fade show col-6 offset-3 mt-1"
   role="success"
+  style="
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    color: green;
+  "
 >
   <%= success %>
-  <button
+  <!-- <button
     type="button"
     class="btn-close"
     data-bs-dismiss="alert"
     aria-label="Close"
-  ></button>
+    style="height: 12px; position: absolute; right: 0;"
+  ></button> -->
 </div>
 <% } %> <% if (error && error.length) { %>
 <div
   id="errorMessage"
   class="alert alert-danger alert-dismissible fade show col-6 offset-3 mt-1"
   role="alert"
+  style="
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    color: red;
+  "
 >
   <%= error %>
-  <button
+  <!-- <button
     type="button"
     class="btn-close"
     data-bs-dismiss="alert"
     aria-label="Close"
-  ></button>
+  ></button> -->
 </div>
 <% } %>
-
 <script>
   setTimeout(function () {
     var successMessage = document.getElementById("successMessage");
