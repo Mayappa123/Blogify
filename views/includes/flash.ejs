@@ -1,5 +1,5 @@
 <!-- flash.ejs -->
-<link rel="stylesheet" href="../../public/css/flash.css" />
+<!-- <link rel="stylesheet" href="../../public/css/flash.css" />
 
 <% if (success && success.length) { %>
 <div
@@ -15,14 +15,14 @@
     color: green;
   "
 >
+<span style="font-size: 25px;">✅</span>
   <%= success %>
-  <!-- <button
+  <button
     type="button"
     class="btn-close"
     data-bs-dismiss="alert"
     aria-label="Close"
-    style="height: 12px; position: absolute; right: 0;"
-  ></button> -->
+  ></button>
 </div>
 <% } %> <% if (error && error.length) { %>
 <div
@@ -38,13 +38,13 @@
     color: red;
   "
 >
-  <%= error %>
-  <!-- <button
+  <span style="font-size: 25px;"></span><%= error %>
+  <button
     type="button"
     class="btn-close"
     data-bs-dismiss="alert"
     aria-label="Close"
-  ></button> -->
+  ></button>
 </div>
 <% } %>
 <script>
@@ -59,4 +59,38 @@
       errorMessage.remove();
     }
   }, 2000);
+</script> -->
+
+
+
+
+
+<link rel="stylesheet" href="../../public/css/flash.css" />
+
+<% if (success && success.length) { %>
+<div id="successMessage" class="alert alert-success flash-message" role="alert">
+  <span class="flash-icon">&#10003;</span>
+  <%= success %>
+</div>
+<% } %>
+
+<% if (error && error.length) { %>
+<div id="errorMessage" class="alert alert-danger flash-message" role="alert">
+  <%= error %>
+</div>
+<% } %>
+
+<script>
+  setTimeout(function () {
+    var successMessage = document.getElementById("successMessage");
+    if (successMessage) {
+      successMessage.remove();
+    }
+
+    var errorMessage = document.getElementById("errorMessage");
+    if (errorMessage) {
+      errorMessage.remove();
+    }
+  }, 4000);
 </script>
+

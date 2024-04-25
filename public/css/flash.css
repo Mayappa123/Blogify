@@ -1,6 +1,6 @@
 /* flash.css */
 
-.errorMessage .successMessage {
+/* .errorMessage .successMessage {
   height: 30px;
   display: flex;
   align-items: center;
@@ -12,7 +12,6 @@
   position: relative;
 }
 
-/* Flash message bottom border */
 .alert::after {
   content: "";
   position: absolute;
@@ -24,7 +23,6 @@
   animation: expandBorder 2s forwards;
 }
 
-/* Animation for expanding border */
 @keyframes expandBorder {
   0% {
     width: 0;
@@ -48,4 +46,59 @@
     width: 90%;
     margin: 0 auto;
   }
+} */
+
+
+
+
+
+
+.flash-message {
+  position: fixed;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  animation: slideIn 0.5s, fadeOut 1s 3s forwards;
 }
+
+.flash-icon {
+  margin-right: 10px;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+@keyframes slideIn {
+  from {
+    top: -100px;
+    opacity: 0;
+  }
+  to {
+    top: 60px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+

@@ -13,9 +13,16 @@
     background: transparent;
     backdrop-filter: blur(20px);
     background-repeat: no-repeat;
-    /* background: linear-gradient(33deg, #492155, #111, #280531, #111, #492155);
-    color: white; */
-    background-color: rgb(122, 145, 221);
+    background: linear-gradient(
+      33deg,
+      #773a8a,
+      #4e4848,
+      #280531,
+      #463434,
+      #7e3a92
+    );
+    color: white;
+    background-color: linear-gradient(pink, green);
   "
 >
   <br />
@@ -59,22 +66,14 @@
           <div class="mt-3">
             <button type="submit" class="btn btn-success mt-3 col-4 offset-4">
               Log In
-            </button>
+            </button><a href="/signup" style="font-size: 12px; text-decoration: none;">  Don't have an account ?</a>
           </div>
         </form>
       </div>
     </div>
   </div>
+  <script src="../../public/js/TogglePassword.js"></script>
 </body>
 <br /><br /><br /><br /><br />
 
-<script>
-  function myFunction() {
-    var x = document.getElementById("password");
-    if (x.type === "password") {
-      x.type = "text";
-    } else {
-      x.type = "password";
-    }
-  }
-</script>
+

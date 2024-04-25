@@ -1,47 +1,40 @@
 /* show.css */
 
-/* Container for blog details */
 .container1 {
   max-width: 90%;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* Profile section */
 .blogProfile {
   margin-bottom: 20px;
 }
 
-/* Profile image */
 .blogProfile img {
   width: 70px;
   height: 70px;
 }
 
-/* Blog header */
 .blog-header {
   margin-bottom: 20px;
 }
 
-/* Blog title */
 .blog-title {
   font-size: 24px;
   font-weight: bold;
   color: #333;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-/* Blog meta */
 .blog-meta {
   font-size: 14px;
   color: #666;
 }
 
-/* Blog content */
 .blog-content {
   margin-bottom: 20px;
 }
 
-/* Link styling */
 a {
   text-decoration: none;
   color: #007bff;
@@ -58,12 +51,11 @@ a:hover {
 }
 
 .buttons .editBtn {
-    width: 100px;
+  width: 100px;
 }
 
 .buttons .deleteBtn {
-    width: 100px;
+  width: 100px;
 }
-
 
 
