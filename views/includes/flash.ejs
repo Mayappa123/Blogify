@@ -61,10 +61,6 @@
   }, 2000);
 </script> -->
 
-
-
-
-
 <link rel="stylesheet" href="../../public/css/flash.css" />
 
 <% if (success && success.length) { %>
@@ -72,10 +68,9 @@
   <span class="flash-icon">&#10003;</span>
   <%= success %>
 </div>
-<% } %>
-
-<% if (error && error.length) { %>
+<% } %> <% if (error && error.length) { %>
 <div id="errorMessage" class="alert alert-danger flash-message" role="alert">
+  <span class="flash-icon">&#10060;</span>
   <%= error %>
 </div>
 <% } %>
@@ -93,4 +88,3 @@
     }
   }, 4000);
 </script>
-
