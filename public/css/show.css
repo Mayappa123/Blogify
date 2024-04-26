@@ -1,5 +1,5 @@
 /* show.css */
-
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 .container1 {
   max-width: 90%;
   margin: 0 auto;
@@ -23,7 +23,7 @@
   font-size: 24px;
   font-weight: bold;
   color: #333;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "PT Sans", sans-serif;
 }
 
 .blog-meta {
@@ -33,6 +33,7 @@
 
 .blog-content {
   margin-bottom: 20px;
+  font-family: "PT Sans", sans-serif;
 }
 
 a {
@@ -57,5 +58,3 @@ a:hover {
 .buttons .deleteBtn {
   width: 100px;
 }
-
-

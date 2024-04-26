@@ -33,6 +33,9 @@
 .blog-title {
   margin-bottom: 5px;
   font-size: 18px;
+  font-weight: 700;
+  font-style: normal;
+  font-family: "PT Sans", sans-serif;
   color: orange;
 }
 

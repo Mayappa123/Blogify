@@ -30,11 +30,15 @@
 
         <% if(currUser && currUser._id.equals(blog.owner._id)) { %>
         <div class="buttons mt-3" role="group">
-          <a href="/blogs/<%= blog._id %>/edit" class="btn btn-primary editBtn">
-            Edit
+          <a
+            href="/blogs/<%= blog._id %>/edit"
+            class="btn btn-primary editBtn"
+            style="text-decoration: none"
+          >
+            EDIT
           </a>
           <form method="POST" action="/blogs/<%= blog._id %>?_method=DELETE">
-            <button class="btn btn-danger deleteBtn">Delete</button>
+            <button class="btn btn-danger deleteBtn">DELETE</button>
           </form>
         </div>
         <% } %>
