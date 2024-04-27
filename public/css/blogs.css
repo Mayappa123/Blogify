@@ -88,3 +88,29 @@
     width: calc(100% - 20px);
   }
 }
+
+.subject {
+  width: 19%;
+  font-size: 10px;
+}
+
+.blogSubject {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@media (max-width: 576px) {
+  .subject {
+    width: 20%;
+  }
+  .blogSubject {
+    font-size: 12px;
+  }
+  .blog-title {
+    font-size: 15px;
+    font-weight: 600;
+  }
+}

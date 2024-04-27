@@ -1,18 +1,19 @@
+// JavaScript
 document.addEventListener("DOMContentLoaded", function () {
-  const profileIcon = document.getElementById("profile-icon");
-  const profileContainer = document.getElementById("profile-container");
-
-  // Initially hide the profile container
-  profileContainer.style.display = "none";
+  const profileIcon = document.querySelectorAll("activeUser");
+  const profileSection = document.querySelectorAll("container3");
 
   // Add click event listener to profile icon
   profileIcon.addEventListener("click", function (event) {
     event.preventDefault();
-    // Toggle the visibility of the profile container
-    if (profileContainer.style.display === "none") {
-      profileContainer.style.display = "block";
+
+    // Toggle the visibility of the profile section
+    if (profileSection.style.display === "none") {
+      profileSection.style.display = "block";
+      document.body.style.opacity("0.7"); // Add class to adjust opacity
     } else {
-      profileContainer.style.display = "none";
+      profileSection.style.display = "none";
+      document.body.style.opacity("0.7"); // Remove class
     }
   });
 });
