@@ -4,15 +4,15 @@
 </head>
 <body>
   <div class="blogPost">
-    <% userBlogs.forEach(b => { %>
+    <% myBlogs.forEach(blog => { %>
     <div class="blog-container">
-      <a href="/blogs/<%= b._id %>" class="singleBlog">
+      <a href="/blogs/<%= blog._id %>" class="singleBlog">
         <div class="blogProfile">
-          <h5 class="authorName text-black"><%= b.author %></h5>
+          <h5 class="authorName text-black"><%= blog.author %></h5>
         </div>
         <div class="blog-header">
-          <h6 class="blog-title"><%= b.title %></h6>
-          <p class="blog-meta">Posted on <%= b.date %></p>
+          <h6 class="blog-title"><%= blog.title %></h6>
+          <p class="blog-meta">Posted on <%= blog.date %></p>
         </div>
       </a>
     </div>

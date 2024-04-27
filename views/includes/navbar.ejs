@@ -35,17 +35,26 @@
         </li>
         <% if(currUser) { %>
         <li class="nav-item">
-          <a class="nav-link" href="/blogs/<%= currUser._id %>">My Blogs<span class="badge">4</span></a>
+          <a class="nav-link" href="/blogs/myBlogs/<%= currUser._id %>"
+            >My Blogs<span class="badge">4</span></a
+          >
         </li>
-          <% } %>
+        <% } %>
       </ul>
       <div class="search">
-        <form class="d-flex serachInput" rosearch-btn">
-          <input class="form-control msearch-btn-inp" tysearch-btn" placeholder="Search blogs" >
-          <button class="btn btn-primary search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+        <form class="d-flex serachInput" method="get" action="/blogs">
+          <input
+            class="form-control msearch-btn-inp"
+            type="text"
+            name="subject"
+            placeholder="Search blogs"
+          />
+          <button class="btn btn-primary search-btn" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i> Search
+          </button>
         </form>
       </div>
-      
+
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <% if(!currUser) { %>
         <li class="nav-item">
@@ -60,7 +69,11 @@
         </li>
         <li class="nav-item">
           <a class="nav-link activeUser" href="/user/profile">
-            <img src="../../public/images/user.png" alt="user" style="height: 30px; width: 30px;">
+            <img
+              src="../../public/images/user.png"
+              alt="user"
+              style="height: 30px; width: 30px"
+            />
           </a>
         </li>
         <li class="nav-item">
@@ -83,5 +96,3 @@
     }
   });
 </script> -->
-
-
