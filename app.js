@@ -7,6 +7,7 @@ if (process.env.NODE_ENV != "production") {
 const express = require("express");
 const app = express();
 const path = require("path");
+const mongoose = require("mongoose");
 const ejsMate = require("ejs-mate");
 const { main } = require("./init/index.js");
 const passport = require("passport");
@@ -57,12 +58,6 @@ app.use((req, res, next) => {
 });
 
 main();
-// .then(() => {
-//   console.log("connected");
-// })
-// .catch((err) => {
-//   console.log("err to connect database");
-// });
 
 //Users related routes...
 app.get("/login", (req, res) => {
@@ -152,6 +147,23 @@ app.get("/blogs/:id", isLoggedin, async (req, res) => {
   res.render("blogs/show.ejs", { blog });
 });
 
+//My blogs route
+app.get("/blogs/myBlogs/:userId", isLoggedin, async (req, res) => {
+  try {
+    const userId = req.params.userId;
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
+      req.flash("error", "Invalid user ID.");
+      return res.redirect("/blogs");
+    }
+    const myBlogs = await Blog.find({ owner: userId });
+    res.render("blogs/myblogs.ejs", { myBlogs });
+  } catch (error) {
+    console.error("Error fetching user blogs:", error);
+    req.flash("error", "Failed to fetch user blogs.");
+    res.redirect("/blogs");
+  }
+});
+
 //create route
 app.post("/blogs", isLoggedin, async (req, res) => {
   const newBlog = new Blog(req.body.blog);
@@ -201,29 +213,17 @@ app.delete("/blogs/:id", isLoggedin, isOwner, async (req, res) => {
   }
 });
 
-//My blogs route
-app.get("/blogs/:user", isLoggedin, async (req, res) => {
-  try {
-    let id = req.params.user;
-    const userBlogs = await Blog.find({ owner: id });
-    res.render("blogs/myblogs.ejs", { userBlogs });
-  } catch (error) {
-    console.error("Error fetching user blogs:", error);
-    req.flash("error", "Failed to fetch user blogs.");
-    res.redirect("/blogs");
-  }
-});
-
-app.get("/blogs/search", isLoggedin, async (req, res) => {
+app.get("/blogs", isLoggedin, async (req, res) => {
   try {
     const subject = req.query.subject;
     const data = await Blog.find({
-      subject: { $regex: new RegExp(subject, "i") },
+      subject: subject,
     });
+    console.log(data);
 
     if (data.length > 0) {
       console.log(data);
-      res.render(`blogs/index.ejs`, { blogs: data });
+      res.render(`blogs/index.ejs`, { Allblogs: data });
     } else {
       req.flash("error", `Blogs related to "${subject}" not found...`);
       res.redirect("/blogs");
