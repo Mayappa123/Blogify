@@ -1,14 +1,14 @@
-/* blogs.css OR Index.css */
+/* blogs.css */
 
+/* Common styles */
 .blogPost {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center aligning the items */
-  gap: 20px; /* Adding gap between items */
+  justify-content: center;
+  gap: 20px;
 }
 
 .blog-container {
-  /* width: calc(33.33% - 20px); */
   width: 85%;
   background-color: #f9f9f9;
   border-radius: 8px;
@@ -57,18 +57,13 @@
   margin: 0 0 5px 0;
 }
 
-.like-icon,
-.dislike-icon {
-  font-size: 15px;
-}
-
 .blogProfile {
   width: 100%;
-  padding: 5px 20px 0 20px; /* Adjusting padding */
-  height: 40px; /* Decreasing height */
+  padding: 5px 20px 0 20px;
+  height: 40px;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Adjusting alignment */
+  justify-content: space-between;
 }
 
 .blogProfile img {
@@ -76,6 +71,8 @@
   width: 50px;
   border-radius: 50%;
 }
+
+/* Media Queries for different screen sizes */
 
 @media (max-width: 991px) {
   .blog-container {
@@ -89,25 +86,15 @@
   }
 }
 
-.subject {
-  width: 19%;
-  font-size: 10px;
-}
-
-.blogSubject {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
 @media (max-width: 576px) {
-  .subject {
-    width: 20%;
+  .blog-container {
+    width: calc(100% - 20px);
   }
   .blogSubject {
+    width: 20%;
     font-size: 12px;
+    text-align: center;
+    margin-top: 10px;
   }
   .blog-title {
     font-size: 15px;
