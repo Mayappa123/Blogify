@@ -72,8 +72,6 @@
   border-radius: 50%;
 }
 
-/* Media Queries for different screen sizes */
-
 @media (max-width: 991px) {
   .blog-container {
     width: calc(50% - 20px);
