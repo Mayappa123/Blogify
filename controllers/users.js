@@ -1,83 +1,60 @@
+// controllers/users.js
 
+const User = require("../models/user");
 
-// //controllers/users.js
+module.exports.renderSignupForm = (req, res) => {
+  res.render("users/signup.ejs");
+};
 
-// const User = require("../models/user");
+module.exports.signup = async (req, res) => {
+  try {
+    let { username, email, password } = req.body;
+    const newUser = new User({ email, username });
+    const registeredUser = await User.register(newUser, password);
+    console.log(registeredUser);
+    req.login(registeredUser, (err) => {
+      if (err) {
+        return next();
+      }
+      req.flash("success", "Welcome to Blogify!!!");
+      res.redirect("/blogs");
+    });
+  } catch (e) {
+    req.flash("error", e.message);
+    res.redirect("/signup");
+  }
+};
 
-// module.exports.renderSignupForm = (req, res) => {
-//   res.render("users/signup.ejs");
-// };
+module.exports.renderLoginForm = (req, res) => {
+  res.render("users/login.ejs");
+};
 
-// module.exports.signup = async (req, res) => {
-//   try {
-//     const { username, email, password } = req.body;
-//     const newUser = new User({
-//       username,
-//       email,
-//     });
-//     const registeredUser = await User.register(newUser, password);
-//     req.login(registeredUser, (err) => {
-//       if (err) {
-//         return next();
-//       }
-//       req.flash("success", "Welcome to Blogify");
-//       res.redirect("/blogs");
-//     });
-//   } catch (e) {
-//     req.flash("errror", e.message);
-//     res.redirect("/signup");
-//   }
-// };
+module.exports.login = async (req, res) => {
+  req.flash("success", "welcome to Blogify...");
+  let redirectUrl = res.locals.redirectUrl || "/blogs";
+  res.redirect(redirectUrl);
+};
 
-// module.exports.renderLoginForm = (req, res) => {
-//   res.render("users/login.ejs");
-// };
+module.exports.logout = (req, res, next) => {
+  req.logout((err) => {
+    if (err) {
+      return next(err);
+    } else {
+      req.flash("success", "You are logged out now...");
+      res.redirect("/login");
+    }
+  });
+};
 
-// module.exports.login = async (req, res) => {
-//   req.flash("success", "welcome to Blogify...");
-//   let redirectUrl = res.locals.redirectUrl || "/blogs";
-//   res.redirect(redirectUrl);
-// };
+module.exports.contact = (req, res) => {
+  res.render("blogs/contact.ejs");
+};
 
-// module.exports.logout = (req, res, next) => {
-//   req.logout((err) => {
-//     if (err) {
-//       return next(err);
-//     }
-//     else {
-//       req.flash("success", "You are logged out now...");
-//       res.redirect("/login");
-//     }
-//   });
-// };
+module.exports.about = (req, res) => {
+  res.render("blogs/about.ejs");
+};
 
-// // module.exports.updateProfile = async (req, res) => {
-// //   const { username, email, contact } = req.body;
-// //   try {
-// //     const user = await User.findById(req.user.id);
-// //     user.username = username;
-// //     user.email = email;
-// //     user.contact = contact;
+module.exports.currUser = (req, res) => {
+  res.render("users/profile.ejs", { currUser: req.user });
+};
 
-// //     if (req.file) {
-// //       user.profileImage = req.file.filename;
-// //     }
-// //     await user.save();
-// //     res.redirect("/user/active");
-// //   } catch (error) {
-// //     console.error("Error updating profile:", error);
-// //     res.status(500).send("Error updating profile");
-// //   }
-// // };
-
-// module.exports.contact = (req, res) => {
-//   res.render("blogs/contact.ejs");
-// };
-
-// module.exports.about = (req, res) => {
-//   res.render("blogs/about.ejs");
-// };
-
-// module.exports.activeUser = (req, res) => {
-//   res.render("users/activeUser.ejs", { currUser: req.user });
-// };
