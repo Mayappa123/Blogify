@@ -24,7 +24,7 @@ Blogify is a simple and intuitive blogging platform that provides you with a pla
    <code>MONGODB_URI=your_mongodb_connection_uri</code> </br>
    <code>SESSION_SECRET=your_session_secret</code>
 4. Run the Application: Start the development server. </br>
-   <code>npm start</code> </br>
+   <code>node app.js</code> </br>
 5. Access Blogify: Open your web browser and visit <a>http://localhost:8040</a> to access the Blogify application.
    </br>
 
