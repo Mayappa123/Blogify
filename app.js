@@ -20,7 +20,7 @@ const port = 8040;
 
 const userRouter = require("./routes/user");
 const blogRouter = require("./routes/blog.js");
-const reviewRouter = require("./routes/review.js")
+const reviewRouter = require("./routes/review.js");
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
