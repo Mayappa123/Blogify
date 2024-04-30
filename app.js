@@ -20,6 +20,7 @@ const port = 8040;
 
 const userRouter = require("./routes/user");
 const blogRouter = require("./routes/blog.js");
+const reviewRouter = require("./routes/review.js")
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -61,14 +62,15 @@ main();
 
 app.use("/", userRouter);
 app.use("/", blogRouter);
+app.use("/", reviewRouter);
+
+app.all("*", (req, res, next) => {
+  next(new ExpressError(404, "Page Not Found"));
+});
 
 app.use((err, req, res, next) => {
   let { status = 500, message = "Something went wrong..." } = err;
   res.status(status).render("error.ejs", { message });
-});
-
-app.all("*", (req, res, next) => {
-  next(new ExpressError(404, "Page Not Found"));
 });
 
 app.listen(port, () => {

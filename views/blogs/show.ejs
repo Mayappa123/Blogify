@@ -5,6 +5,7 @@
 <head>
   <title><%= blog.title %></title>
   <link rel="stylesheet" href="../../public/css/show.css" />
+  <link rel="stylesheet" href="../../public/css/review.css" />
 </head>
 
 <body>
@@ -13,8 +14,7 @@
       <div class="blog-container">
         <div class="blogProfile">
           <h3>
-            <img src="../../extra/user.jpg" alt="" /><%= blog.owner.username
-            %>
+            <img src="../../extra/user.jpg" alt="" /><%= blog.owner.username %>
           </h3>
           <h5 class="btn btn-outline-primary"><%= blog.subject %></h5>
         </div>
@@ -44,5 +44,68 @@
         <% } %>
       </div>
     </div>
+
+    <div class="col-12 mx-auto mb-1 review-form">
+      <hr />
+      <h4>Leave your review</h4>
+      <form
+        action="/blogs/<%= blog._id %>/reviews"
+        method="post"
+        novalidate
+        class="needs-validation"
+      >
+        <div class="mb-1">
+          <label for="rating" class="form-label">Rating</label>
+          <input
+            class="form-range"
+            type="range"
+            min="1"
+            max="5"
+            name="review[rating]"
+            id="rating"
+            required
+          />
+        </div>
+        <div class="mb-1">
+          <label for="comment" class="form-label">Comment</label>
+          <textarea
+            type="text"
+            class="form-control"
+            rows="5"
+            cols="50"
+            name="review[comment]"
+            id="comment"
+            required
+          ></textarea>
+          <div class="invalid-feedback">Review should not be empty</div>
+        </div>
+        <button class="btn btn-outline-dark">SUBMIT</button>
+      </form>
+      <hr />
+    </div>
+
+    <h4>All Reviews</h4>
+    <div class="row review-container">
+      <% for (review of blog.reviews) { %>
+      <div class="card mb-1 mt-1 col-3 ms-1">
+        <div class="card-body">
+          <div style="display: flex; align-items: center;">
+            <img src="../../extra/user.jpg" alt="" style="height: 30px; width: 30px;">
+            <h5 class="card-title"><%= review.author %></h5>
+          </div>
+          <p class="card-text"><%= review.comment %></p>
+          <p class="card-text"><%= review.rating %> stars</p>
+        </div>
+        <form
+          method="post"
+          action="/blogs/<%= blog._id %>/reviews/<%= review._id %>?_method=DELETE"
+          class="mb-1"
+        >
+          <button class="btn btn-dark btn-sm deleteReview">DELETE</button>
+        </form>
+      </div>
+      <% } %>
+    </div>
+    
   </div>
 </body>
