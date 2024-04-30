@@ -2,6 +2,7 @@
 
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const Review = require("./review.js");
 const blogSchema = new mongoose.Schema({
   // blogImage: {
   //   type: String,
@@ -30,18 +31,22 @@ const blogSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  // likes: {
-  //   type: Number,
-  //   required: true,
-  // },
-  // dislikes: {
-  //   type: Number,
-  //   required: true,
-  // },
+  reviews: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Review",
+    },
+  ],
   owner: {
     type: Schema.Types.ObjectId,
     ref: "User",
   },
+});
+
+blogSchema.post("findOneAndDelete", async (blog) => {
+  if (blog) {
+    await Review.deleteMany({ _id: { $in: blog.reviews } });
+  }
 });
 
 const Blog = mongoose.model("Blog", blogSchema);

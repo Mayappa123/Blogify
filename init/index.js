@@ -10,7 +10,7 @@ async function initDB() {
   try {
     initData.data = initData.data.map((obj) => ({
       ...obj,
-      owner: "660655c37f9e4d2dac65a93a", 
+      owner: "660655c37f9e4d2dac65a93a",
     }));
     await Blog.deleteMany({});
     await Blog.insertMany(initData.data);
@@ -30,6 +30,4 @@ async function main() {
   }
 }
 
-
 module.exports = { main };
-
