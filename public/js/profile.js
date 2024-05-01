@@ -1,19 +1,22 @@
-// JavaScript
 document.addEventListener("DOMContentLoaded", function () {
-  const profileIcon = document.querySelectorAll("activeUser");
-  const profileSection = document.querySelectorAll("container3");
+  const userActive = document.querySelector(".activeUser");
+  const container3 = document.querySelector(".container3");
+  const close = document.querySelector(".close");
 
-  // Add click event listener to profile icon
-  profileIcon.addEventListener("click", function (event) {
-    event.preventDefault();
+  container3.style.display = "none";
 
-    // Toggle the visibility of the profile section
-    if (profileSection.style.display === "none") {
-      profileSection.style.display = "block";
-      document.body.style.opacity("0.7"); // Add class to adjust opacity
-    } else {
-      profileSection.style.display = "none";
-      document.body.style.opacity("0.7"); // Remove class
+  function toggleContainer3() {
+    const container3 = document.querySelector(".container3");
+    if (container3.style.display === "none") {
+      container3.style.display = "block";
+      container3.style.display = "none";
     }
-  });
+  }
+
+  function closeContainer3() {
+    container3.style.display = "none";
+  }
+
+  userActive.addEventListener("click", toggleContainer3);
+  close.addEventListener("close", closeContainer3);
 });

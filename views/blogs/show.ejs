@@ -45,7 +45,7 @@
       </div>
     </div>
 
-    <div class="col-12 mx-auto mb-1 review-form">
+    <div class="col-12 mx-auto mb-1 review-form mt-3">
       <hr />
       <h4>Leave your review</h4>
       <form
@@ -89,9 +89,9 @@
       <% for (review of blog.reviews) { %>
       <div class="card mb-1 mt-1 col-3 ms-1">
         <div class="card-body">
-          <div style="display: flex; align-items: center;">
+          <div style="display: flex; align-items: center; justify-content: flex-start;">
             <img src="../../extra/user.jpg" alt="" style="height: 30px; width: 30px;">
-            <h5 class="card-title"><%= review.author %></h5>
+            <h5 class="card-title" style="padding-top: 8px;">Mayappa Pujari</h5>
           </div>
           <p class="card-text"><%= review.comment %></p>
           <p class="card-text"><%= review.rating %> stars</p>

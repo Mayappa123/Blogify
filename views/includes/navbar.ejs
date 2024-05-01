@@ -2,12 +2,11 @@
 
 <head>
   <link rel="stylesheet" href="../../public/css/navbar.css" />
+  <link rel="stylesheet" href="../../public/css/profile.css" />
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <i class="fa-solid fa-b" style="color: rgb(255, 137, 2)"></i>logify
-    </a>
+    <a class="navbar-brand" href="#"> <i class="fa-solid fa-b"></i>logify</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -19,9 +18,9 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      
+      <ul class="navbar-nav me-auto left">
         <li class="nav-item">
           <a class="nav-link" href="/blogs">Explore</a>
         </li>
@@ -39,21 +38,26 @@
         </li>
         <% } %>
       </ul>
+
       <div class="search">
-        <form class="d-flex serachInput" method="get" action="/blogs">
+        <form
+          class="d-flex serachInput"
+          method="get"
+          action="/blogs/search/:subject"
+        >
           <input
-            class="form-control msearch-btn-inp"
+            class="form-control searchForm"
             type="text"
-            name="subject"
+            name="blog[subject]"
             placeholder="Search blogs"
           />
-          <button class="btn btn-primary search-btn" type="submit">
-            <i class="fa-solid fa-magnifying-glass"></i> Search
+          <button class="btn btn-sm btn-primary search-btn" type="submit">
+            Search
           </button>
         </form>
       </div>
 
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav ms-auto right">
         <% if(!currUser) { %>
         <li class="nav-item">
           <a class="nav-link" href="/signup">Signup</a>
@@ -66,13 +70,43 @@
           <a class="nav-link" href="/blogs/new">New Blog </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link activeUser" href="/user/profile">
+          <a class="nav-link activeUser" href="#">
+            <!-- href="/user/profile" -->
             <img
               src="../../public/images/user.png"
-              alt="user"
-              style="height: 30px; width: 30px"
+              onclick="toggleContainer3()"
             />
           </a>
+
+          <div class="container3">
+            <div class="buttons">
+              <button
+                class="btn btn-outline-danger btn-sm fa-solid fa-xmark close"
+                onclick="closeContainer3()"
+              ></button>
+            </div>
+            <div>
+              <!-- Hidden file input -->
+              <input
+                type="file"
+                name="file"
+                id="fileInput"
+                class="file"
+                style="display: none"
+              />
+              <label for="fileInput"
+                ><img
+                  src="../../extra/user.jpg"
+                  alt=""
+                  class="user text-center"
+              /></label>
+            </div>
+            <div>
+              <h4 class="text-center bioContent"><%= currUser.username %></h4>
+              <p class="text-center bioContent mx-auto">Change password</p>
+              <p class="text-center bioContent mx-auto">Delete Account</p>
+            </div>
+          </div>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/logout">Logout</a>
@@ -82,3 +116,5 @@
     </div>
   </div>
 </nav>
+
+<script src="../../public/js/profile.js"></script>
