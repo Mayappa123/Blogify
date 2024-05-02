@@ -75,6 +75,9 @@ module.exports.myBlogs = async (req, res) => {
       return res.redirect("/blogs");
     }
     const myBlogs = await Blog.find({ owner: userId });
+    if (!myBlogs) {
+      req.flash("You haven't posted any blog...");
+    }
     res.render("blogs/myblogs.ejs", { myBlogs });
   } catch (error) {
     console.error("Error fetching user blogs:", error);
@@ -86,20 +89,20 @@ module.exports.myBlogs = async (req, res) => {
 module.exports.searchBlogs = async (req, res) => {
   try {
     const subject = req.query.subject;
-    const data = await Blog.find({
+    const myBlogs = await Blog.find({
       subject: subject,
     });
-    console.log(data);
+    console.log(myBlogs);
 
-    if (data.length > 0) {
+    if (myBlogs.length > 0) {
       console.log(data);
-      res.render(`blogs/index.ejs`, { Allblogs: data });
+      res.render(`blogs/myBlogs.ejs`, { myBlogs });
     } else {
       req.flash("error", `Blogs related to "${subject}" not found...`);
       res.redirect("/blogs");
     }
   } catch (error) {
-    console.error("Error searching blogs:", error);
+    console.error("Error searching blogs:", error.message);
     req.flash("error", "An error occurred while searching blogs...");
     res.redirect("/blogs");
   }
