@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const userActive = document.querySelector(".activeUser");
   const container3 = document.querySelector(".container3");
-  const close = document.querySelector(".close");
+  // const close = document.querySelector(".close");
 
   container3.style.display = "none";
 
@@ -13,10 +13,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function closeContainer3() {
-    container3.style.display = "none";
-  }
+  // function closeContainer3() {
+  //   container3.style.display = "none";
+  // }
 
   userActive.addEventListener("click", toggleContainer3);
-  close.addEventListener("close", closeContainer3);
+  // close.addEventListener("close", closeContainer3);
 });

@@ -1,120 +1,45 @@
-<!-- includes/navbar.ejs -->
-
 <head>
   <link rel="stylesheet" href="../../public/css/navbar.css" />
-  <link rel="stylesheet" href="../../public/css/profile.css" />
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"> <i class="fa-solid fa-b"></i>logify</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav me-auto left">
-        <li class="nav-item">
-          <a class="nav-link" href="/blogs">Explore</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/contact">Contact</a>
-        </li>
-        <% if(currUser) { %>
-        <li class="nav-item">
-          <a class="nav-link" href="/blogs/myBlogs/<%= currUser._id %>"
-            >My Blogs <span class="badge">4</span></a
-          >
-        </li>
-        <% } %>
-      </ul>
-
-      <div class="search">
-        <form
-          class="d-flex serachInput"
-          method="get"
-          action="/blogs/search/:subject"
-        >
-          <input
-            class="form-control searchForm"
-            type="text"
-            name="blog[subject]"
-            placeholder="Search blogs"
-          />
-          <button class="btn btn-sm btn-primary search-btn" type="submit">
-            Search
-          </button>
-        </form>
-      </div>
-
-      <ul class="navbar-nav ms-auto right">
-        <% if(!currUser) { %>
-        <li class="nav-item">
-          <a class="nav-link" href="/signup">Signup</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/login">Login</a>
-        </li>
-        <% } %> <% if(currUser) { %>
-        <li class="nav-item">
-          <a class="nav-link" href="/blogs/new">New Blog </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link activeUser" href="#">
-            <!-- href="/user/profile" -->
-            <img
-              src="../../public/images/user.png"
-              onclick="toggleContainer3()"
-            />
-          </a>
-
-          <div class="container3">
-            <div class="buttons">
-              <button
-                class="btn btn-outline-danger btn-sm fa-solid fa-xmark close"
-                onclick="closeContainer3()"
-              ></button>
-            </div>
-            <div>
-              <!-- Hidden file input -->
-              <input
-                type="file"
-                name="file"
-                id="fileInput"
-                class="file"
-                style="display: none"
-              />
-              <label for="fileInput"
-                ><img
-                  src="../../extra/user.jpg"
-                  alt=""
-                  class="user text-center"
-              /></label>
-            </div>
-            <div>
-              <h4 class="text-center bioContent"><%= currUser.username %></h4>
-              <p class="text-center bioContent mx-auto">Change password</p>
-              <p class="text-center bioContent mx-auto">Delete Account</p>
-            </div>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/logout">Logout</a>
-        </li>
-        <% } %>
-      </ul>
+  <ul class="navbar-nav">
+    <div class="logo">
+      <a class="navbar-brand" href=""><i class="fa-solid fa-b"></i>logify</a>
     </div>
-  </div>
+    <div class="link">
+      <li class="nav-item">
+        <a class="nav-link" href="/blogs">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact</a>
+      </li>
+      <% if(currUser) { %>
+      <li class="nav-item">
+        <a class="nav-link" href="/blogs/myBlogs/<%= currUser._id %>"
+          >My Blogs <span class="badge">4</span></a
+        >
+      </li>
+      <% } %> <% if(!currUser) { %>
+      <li class="nav-item">
+        <a class="nav-link" href="/signup">Signup</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+      <% } else { %>
+      <li class="nav-item">
+        <a class="nav-link" href="/blogs/new">New Blog</a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa-solid fa-user"></i> </a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+      </li>
+      <% } %>
+    </div>
+  </ul>
 </nav>
-
-<script src="../../public/js/profile.js"></script>
