@@ -16,9 +16,6 @@
   flex-wrap: nowrap;
   justify-content: space-around;
 }
-.logo {
-  margin-top: 8px;
-}
 
 .navbar-brand {
   width: 15vw;
@@ -30,11 +27,13 @@
   color: rgb(255, 137, 2);
 }
 .badge {
-  font-size: 0.8vw;
+  font-size: 0.7vw;
+  border-radius: 50%;
   background-color: rgb(255, 137, 2);
 }
 
 .link {
+  font-size: 1vw;
   width: 85vw;
   display: flex;
   align-items: center;
@@ -52,18 +51,20 @@
     display: flex;
     justify-content: space-between;
   }
-  .logo {
-    margin-top: 5px;
-  }
+
   .navbar-brand {
     width: 20vw;
     font-size: 3vw;
     align-items: center;
   }
+  .badge {
+    font-size: 1vh;
+    justify-content: center;
+  }
 
   .link {
     display: flex;
-    font-size: 2.4vw;
+    font-size: 2.2vw;
     justify-content: space-between;
   }
   .nav-item:last-child {
@@ -82,6 +83,10 @@
   .logo {
     margin-top: 2px;
   }
+  .badge {
+    font-size: 0.8vw;
+    text-align: center;
+  }
 }
 
 @media (min-width: 992px) {
@@ -98,8 +103,7 @@
 }
 
 .badge {
-  background-color: aliceblue;
-  color: black;
+  color: white;
 }
 
 .currUser img {

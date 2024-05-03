@@ -29,6 +29,13 @@
   color: #ff0000;
 }
 
+@media (max-width: 576px) {
+  .flash-message {
+    font-size: 2.5vw;
+    height: auto;
+  }
+}
+
 @keyframes slideIn {
   from {
     top: -100px;
