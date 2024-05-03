@@ -54,7 +54,7 @@
         novalidate
         class="needs-validation"
       >
-        <div class="mb-1">
+        <!-- <div class="mb-1">
           <label for="rating" class="form-label">Rating</label>
           <input
             class="form-range"
@@ -65,24 +65,32 @@
             id="rating"
             required
           />
-        </div>
-
-        <!-- <div class="mb-3 mt-3">
-            <label for="rating" class="form-label">Rating</label>
-            <fieldset class="starability-slot">
-                <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="0" checked aria-label="No rating." />
-                <input type="radio" id="rate1" name="review[rating]" value="1" />
-                <label for="rate1" title="Terrible">1 star</label>
-                <input type="radio" id="rate2" name="review[rating]" value="2" />
-                <label for="rate2" title="Not good">2 stars</label>
-                <input type="radio" id="rate3" name="review[rating]" value="3" />
-                <label for="rate3" title="Average">3 stars</label>
-                <input type="radio" id="rate4" name="review[rating]" value="4" />
-                <label for="rate4" title="Very good">4 stars</label>
-                <input type="radio" id="rate5" name="review[rating]" value="5" />
-                <label for="rate5" title="Amazing">5 stars</label>
-            </fieldset>
         </div> -->
+
+        <div class="mt-3">
+          <label for="rating" class="form-label">Rating</label>
+          <fieldset class="starability-slot">
+            <input
+              type="radio"
+              id="no-rate"
+              class="input-no-rate"
+              name="review[rating]"
+              value="1"
+              checked
+              aria-label="No rating."
+            />
+            <input type="radio" id="rate1" name="review[rating]" value="1" />
+            <label for="rate1" title="Terrible">1 star</label>
+            <input type="radio" id="rate2" name="review[rating]" value="2" />
+            <label for="rate2" title="Not good">2 stars</label>
+            <input type="radio" id="rate3" name="review[rating]" value="3" />
+            <label for="rate3" title="Average">3 stars</label>
+            <input type="radio" id="rate4" name="review[rating]" value="4" />
+            <label for="rate4" title="Very good">4 stars</label>
+            <input type="radio" id="rate5" name="review[rating]" value="5" />
+            <label for="rate5" title="Amazing">5 stars</label>
+          </fieldset>
+        </div>
 
         <div class="mb-1">
           <label for="comment" class="form-label">Comment</label>
@@ -107,13 +115,7 @@
       <% for (review of blog.reviews) { %>
       <div class="card mb-1 mt-1 col-3 ms-1">
         <div class="card-body">
-          <div
-            style="
-              display: flex;
-              align-items: center;
-              justify-content: flex-start;
-            "
-          >
+          <div class="reviewUser">
             <img
               src="../../extra/user.jpg"
               alt=""
@@ -121,8 +123,11 @@
             />
             <h5 class="card-title" style="padding-top: 8px">Mayappa Pujari</h5>
           </div>
+          <p
+            class="starability-result card-text"
+            data-rating="<%= review.rating %>"
+          ></p>
           <p class="card-text"><%= review.comment %></p>
-          <p class="card-text"><%= review.rating %> stars</p>
         </div>
         <% if(review.author){ %>
         <form
