@@ -173,3 +173,6 @@
 //     res.redirect("/blogs");
 //   }
 // });
+
+
+//mongodb+srv://mayappapujari561999:<password>@cluster0.otzgzdu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
