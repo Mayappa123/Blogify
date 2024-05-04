@@ -14,7 +14,14 @@ module.exports.renderNewForm = (req, res) => {
 
 module.exports.showBlog = async (req, res) => {
   let { id } = req.params;
-  const blog = await Blog.findById(id).populate("owner").populate("reviews");
+  // const blog = await Blog.findById(id)
+  //   .populate("owner")
+  //   .populate("reviews")
+  //   .populate("username");
+  const blog = await Blog.findById(id)
+    .populate({ path: "reviews", populate: { path: "author" } })
+    .populate("owner");
+
   if (!blog) {
     req.flash("error", "blog does'nt exist...");
     res.redirect("/blogs");
