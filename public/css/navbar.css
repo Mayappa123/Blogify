@@ -48,6 +48,14 @@
   margin-left: auto;
 }
 
+.user {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+
+}
+
 @media (max-width: 576px) {
   .nav-item {
     padding: 0 1vw;

@@ -5,6 +5,7 @@
   <title>Contact Us</title>
 </head>
 <body>
+
   <div class="container">
     <h1 class="text-center mt-5">CONTACT US</h1>
     <form action="/contact" method="POST">
@@ -21,6 +22,53 @@
         <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
       </div >
       <button type="submit" class="btn btn-primary mb-3">SUBMIT</button>
+      
     </form>
   </div>
+
 </body>
+
+
+
+
+<!-- 
+<head>
+  <title>Contact Us</title>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="text-center mt-5">CONTACT US</h1>
+    <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#contactModal">Open Contact Form</button>
+  </div>
+
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="/contact" method="POST">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary mb-3">SUBMIT</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+ -->
