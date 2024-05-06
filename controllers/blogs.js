@@ -14,10 +14,6 @@ module.exports.renderNewForm = (req, res) => {
 
 module.exports.showBlog = async (req, res) => {
   let { id } = req.params;
-  // const blog = await Blog.findById(id)
-  //   .populate("owner")
-  //   .populate("reviews")
-  //   .populate("username");
   const blog = await Blog.findById(id)
     .populate({ path: "reviews", populate: { path: "author" } })
     .populate("owner");
