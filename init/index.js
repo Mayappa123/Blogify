@@ -4,8 +4,7 @@ const mongoose = require("mongoose");
 const Blog = require("../models/blog.js");
 const initData = require("./blogData.js");
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/blogify";
-
+const dbURL = process.env.ATLASDB_URL;
 async function initDB() {
   try {
     initData.data = initData.data.map((obj) => ({
@@ -23,7 +22,7 @@ async function initDB() {
 
 async function main() {
   try {
-    await mongoose.connect(MONGO_URL);
+    await mongoose.connect(dbURL);
     console.log("Connected to DB");
   } catch (err) {
     console.error("Error connecting to the database:", err);
