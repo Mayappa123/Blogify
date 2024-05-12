@@ -5,31 +5,47 @@
   <title>Contact Us</title>
 </head>
 <body>
-
   <div class="container">
-    <h1 class="text-center mt-5">CONTACT US</h1>
-    <form action="/contact" method="POST">
-      <div class="mb-3">
-        <label for="name" class="form-label">Name</label>
-        <input type="text" class="form-control" id="name" name="name" required>
+    <h1 class="text-center mt-5 mb-3">CONTACT US</h1>
+    <form action="/contact" method="POST" class="flex">
+      <div class="row offset-1">
+        <div class="mb-3 col-5">
+          <label for="name" class="form-label"><b>Name</b></label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            required
+          />
+        </div>
+        <div class="mb-3 col-5">
+          <label for="email" class="form-label"><b>Email</b></label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            required
+          />
+        </div>
       </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" name="email" required>
+      <div class="mb-3 col-9 offset-1">
+        <label for="message" class="form-label"><b>Message</b></label>
+        <textarea
+          class="form-control"
+          id="message"
+          name="message"
+          rows="5"
+          required
+        ></textarea>
       </div>
-      <div class="mb-3">
-        <label for="message" class="form-label">Message</label>
-        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-      </div >
-      <button type="submit" class="btn btn-primary mb-3">SUBMIT</button>
-      
+      <button type="submit" class="btn btn-primary mb-3 offset-5">
+        SUBMIT
+      </button>
     </form>
   </div>
-
 </body>
-
-
-
 
 <!-- 
 <head>

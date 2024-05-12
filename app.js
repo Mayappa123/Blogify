@@ -11,12 +11,15 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const ExpressError = require("./utils/ExpressError.js");
 const session = require("express-session");
+const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const User = require("./models/user.js");
 const { main } = require("./init/index.js");
 const port = 8040;
+
+const dbUrl = process.env.ATLASDB_URL;
 
 const userRouter = require("./routes/user");
 const blogRouter = require("./routes/blog.js");
@@ -30,8 +33,20 @@ app.use(methodOverride("_method"));
 app.use(express.static(__dirname));
 app.engine("ejs", ejsMate);
 
+const store = MongoStore.create({
+  mongoUrl: dbUrl,
+  crypto: {
+    secret: process.env.SECRET,
+  },
+  touchAfter: 24 * 3600,
+});
+store.on("error", () => {
+  console.log("session store error", err)
+})
+
 const sessionOptions = {
-  secret: "mayappa",
+  store,
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
   cookie: {
@@ -40,6 +55,8 @@ const sessionOptions = {
     httpOnly: true,
   },
 };
+
+
 
 app.use(session(sessionOptions));
 app.use(flash());
