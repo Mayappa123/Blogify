@@ -79,6 +79,10 @@
   .card {
     width: 100%;
   }
+
+  .review-form .review-container {
+    display: none;
+  }
 }
 
 .review-container {
