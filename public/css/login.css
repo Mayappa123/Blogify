@@ -20,6 +20,10 @@ body {
   background-color: linear-gradient(pink, green);
 }
 
+.AsignupBtn {
+  color: white;
+  text-decoration: none;
+}
 button:hover {
   opacity: 0.8;
 }
@@ -28,5 +32,3 @@ label {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
-
-
