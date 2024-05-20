@@ -7,19 +7,20 @@ const { isLoggedin, saveRedirectUrl } = require("../middleware");
 const WrapAsync = require("../utils/WrapAsync");
 const userController = require("../controllers/users");
 
-router.route("/login")
+router
+  .route("/login")
   .get(WrapAsync(userController.renderLoginForm))
   .post(
     saveRedirectUrl,
     passport.authenticate("local", {
       failureRedirect: "/login",
       failureFlash: true,
-    }), WrapAsync(userController.login)
+    }),
+    WrapAsync(userController.login)
   );
 
- 
- 
-router.route("/signup")
+router
+  .route("/signup")
   .get(WrapAsync(userController.renderSignupForm))
   .post(WrapAsync(userController.signup));
 
