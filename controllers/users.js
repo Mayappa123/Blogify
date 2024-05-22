@@ -58,3 +58,4 @@ module.exports.currUser = (req, res) => {
   res.render("users/profile.ejs", { currUser: req.user });
 };
 
+
