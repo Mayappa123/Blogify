@@ -86,6 +86,10 @@
   .nav-item:last-child {
     margin-left: auto;
   }
+  .userIcon {
+        margin-right: 10px;
+
+  }
 }
 
 @media ((min-width: 577px) and ( max-width: 991.98px)) {
@@ -102,6 +106,9 @@
   .badge {
     font-size: 0.8vw;
     text-align: center;
+  }
+  .userIcon {
+    margin-right: 12px;
   }
 }
 

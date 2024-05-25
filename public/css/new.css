@@ -1,0 +1,12 @@
+.form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .postBtn {
+      width: 100px;
+    }
+
+    .postBtn {
+        width: 100%;
+    }
