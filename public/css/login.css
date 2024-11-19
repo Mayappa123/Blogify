@@ -32,3 +32,14 @@ label {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
+
+.fa-b {
+  color: orange;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 25px;
+}

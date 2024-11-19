@@ -41,8 +41,8 @@ const store = MongoStore.create({
   touchAfter: 24 * 3600,
 });
 store.on("error", () => {
-  console.log("session store error", err)
-})
+  console.log("session store error", err);
+});
 
 const sessionOptions = {
   store,
@@ -92,4 +92,3 @@ app.use((err, req, res, next) => {
 app.listen(port, () => {
   console.log("app is running");
 });
-
